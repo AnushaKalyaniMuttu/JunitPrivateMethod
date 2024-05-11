@@ -1,0 +1,13 @@
+import static org.powermock.api.mockito.PowerMockito.when;
+
+@PrepareForTest(MyClass.class)
+public class MyClassTest {
+
+    @Test
+    public void testPrivateMethod() throws Exception {
+        MyClass obj = new MyClass();
+        PowerMockito.when(obj, "privateMethod", 5).thenReturn(10);
+        int result = obj.privateMethod(5);
+        assertEquals(10, result);
+    }
+}
