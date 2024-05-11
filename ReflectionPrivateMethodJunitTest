@@ -1,0 +1,13 @@
+import java.lang.reflect.Method;
+
+public class MyClassTest {
+
+    @Test
+    public void testPrivateMethod() throws Exception {
+        MyClass obj = new MyClass();
+        Method method = MyClass.class.getDeclaredMethod("privateMethod", int.class);
+        method.setAccessible(true);
+        int result = (int) method.invoke(obj, 5);
+        assertEquals(10, result);
+    }
+}
