@@ -1,0 +1,1 @@
+If MyClassTest is in the same package as MyClass, it can directly access package-private methods
