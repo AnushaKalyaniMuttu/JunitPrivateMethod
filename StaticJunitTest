@@ -1,0 +1,20 @@
+import static org.powermock.api.mockito.PowerMockito.mockStatic;
+import static org.powermock.api.mockito.PowerMockito.when;
+
+@RunWith(PowerMockRunner.class)
+@PrepareForTest(YourClassWithStaticMethod.class)
+public class YourClassWithStaticMethodTest {
+
+    @Test
+    public void testYourMethod() {
+        // Mock the static method
+        mockStatic(YourClassWithStaticMethod.class);
+        when(YourClassWithStaticMethod.yourStaticMethod()).thenReturn("mocked value");
+
+        // Call the method under test
+        String result = YourClassWithStaticMethod.yourMethod();
+
+        // Assert the result
+        assertEquals("expected value", result);
+    }
+}
