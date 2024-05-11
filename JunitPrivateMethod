@@ -1,0 +1,16 @@
+public class MyClass {
+    private int privateMethod(int x) {
+        return x * 2;
+    }
+}
+-----------
+
+public class MyClass {
+    public int publicMethod(int x) {
+        return privateMethod(x);
+    }
+    
+    private int privateMethod(int x) {
+        return x * 2;
+    }
+}
